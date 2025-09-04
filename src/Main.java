@@ -7,10 +7,10 @@ public class Main {
         System.out.println("Задача 1");
         byte iOs = 0;
         byte android = 1;
-        byte clientOs = 1;
-        if (clientOs == 0) {
+        byte clientOs = 0;
+        if (clientOs == iOs) {
             System.out.println("Установите версию приложения для iOS по ссылке.");
-        } else if (clientOs == 1) {
+        } else if (clientOs == android) {
             System.out.println("Установите версию приложения для Android по ссылке.");
         }
         System.out.println();
@@ -19,18 +19,19 @@ public class Main {
         System.out.println("Задача 2");
         byte iOs2 = 0;
         byte android2 = 1;
-        byte clientOs2 = 0;
+        byte clientOs2 = 1;
+        short yearVersion = 2015;
         short year = 2010;
-        if (clientOs2 == 0) {
-            if (year < 2015) {
+        if (clientOs2 == iOs2) {
+            if (year < yearVersion) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
-            } else if (year <= 2015) {
+            } else if (year <= yearVersion) {
                 System.out.println("Установите версию приложения для iOS по ссылке.");
             }
-        } else if (clientOs2 == 1) {
-            if (year < 2015) {
+        } else if (clientOs2 == android2) {
+            if (year < yearVersion) {
                 System.out.println("Установите облегченную версию приложения для Android по ссылке.");
-            } else if (year <= 2015) {
+            } else if (year <= yearVersion) {
                 System.out.println("Установите версию приложения для Android по ссылке.");
             }
         }
