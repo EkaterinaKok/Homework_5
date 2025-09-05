@@ -19,21 +19,18 @@ public class Main {
         System.out.println("Задача 2");
         byte iOs2 = 0;
         byte android2 = 1;
-        byte clientOs2 = 1;
+        byte clientOs2 = 0;
         short yearVersion = 2015;
-        short year = 2010;
-        if (clientOs2 == iOs2) {
-            if (year < yearVersion) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
-            } else if (year <= yearVersion) {
-                System.out.println("Установите версию приложения для iOS по ссылке.");
-            }
-        } else if (clientOs2 == android2) {
-            if (year < yearVersion) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке.");
-            } else if (year <= yearVersion) {
-                System.out.println("Установите версию приложения для Android по ссылке.");
-            }
+        short clientDeviceYear = 2020;
+        if (clientOs2 == iOs2 && clientDeviceYear < yearVersion) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
+        } else if (clientOs2 == iOs2 && clientDeviceYear >= yearVersion) {
+            System.out.println("Установите версию приложения для iOS по ссылке.");
+        }
+        if (clientOs2 == android2 && clientDeviceYear < yearVersion) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке.");
+        } else if (clientOs2 == android2 && clientDeviceYear >= yearVersion) {
+            System.out.println("Установите версию приложения для Android по ссылке.");
         }
         System.out.println();
 
@@ -41,20 +38,15 @@ public class Main {
         System.out.println("Задача 3");
         int firstYearLeap = 1584;
         int year3 = 2021;
-        if (year3 >= firstYearLeap) {
-            if (year3 % 100 == 0) {
-                if (year3 % 400 == 0) {
-                    System.out.println("Год " + year3 + " является високосным.");
-                } else {
-                    System.out.println("Год " + year3 + " не является високосным.");
-                }
-            } else if (year3 % 4 == 0) {
-                System.out.println("Год " + year3 + " является високосным.");
-            } else {
-                System.out.println("Год " + year3 + " не является високосным.");
-            }
+        if (year3 >= firstYearLeap && year3 % 100 == 0 && year3 % 400 == 0) {
+            System.out.println("Год " + year3 + " является високосным.");
+        } else if (year3 >= firstYearLeap && year3 % 4 == 0) {
+            System.out.println("Год " + year3 + " является високосным.");
         } else {
-            System.out.println("Год " + year3 + "  меньше 1584 года, в котором ввели високосный год.");
+            System.out.println("Год " + year3 + " не является високосным.");
+        }
+        if (year3 < firstYearLeap) {
+            System.out.println("Год " + year3 + " меньше 1584 года, в котором ввели високосный год.");
         }
         System.out.println();
 
